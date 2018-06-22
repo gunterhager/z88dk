@@ -2,13 +2,14 @@
 Z80ASM = $(EXEC_PREFIX)z80asm
 ZX7 = $(EXEC_PREFIX)zx7
 
-TARGET ?= z80 cpm m rc2014 sms vgl yaz180 z180 zx zxn
+# TARGET ?= z80 cpm m rc2014 sms vgl yaz180 z180 zx zxn mz800
+TARGET ?= mz800
 
 jobs := $(foreach target,$(TARGET),job-$(target))
 cleans := $(foreach target,$(TARGET),clean-$(target))
 
 .PHONY: all
-all: ${jobs} 
+all: ${jobs}
 
 target = $(firstword $(subst -, ,$*))
 
