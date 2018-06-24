@@ -163,16 +163,20 @@ ENDIF
 IF __CRTCFG = 3
 
    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-   ;; embedded ram model ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   ;; guaranteed RAM model
+   ;;
+   ;; Memory in the range 0x2000 - 0x8000 is always RAM,
+   ;; no matter what bank we switch to.
    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-   defc TAR__crt_org_code              = 0x3000 ; Start of program
+
+   defc TAR__crt_org_code              = 0x2000 ; Start of program
    defc TAR__crt_org_data              = 0
    defc TAR__crt_org_bss               = 0
 
-   defc TAR__crt_model                 = 0 ; RAM
+   defc TAR__crt_model                 = 0 ; Should run in RAM
 
-   defc TAR__register_sp               = 0x3000 ; Stack pointer
+   defc TAR__register_sp               = 0x8000 ; Stack pointer
    defc TAR__crt_stack_size            = 512
 
    defc TAR__crt_initialize_bss        = 0
@@ -188,7 +192,7 @@ IF __CRTCFG = 3
    defc TAR__crt_enable_restart        = 0
    defc TAR__crt_enable_close          = 1
 
-   defc TAR__crt_enable_eidi           = 0x13
+   defc TAR__crt_enable_eidi           = 0 ; Interrupts unchanged
    defc TAR__crt_on_exit               = 0x10001
 
    defc TAR__crt_enable_rst            = 0
