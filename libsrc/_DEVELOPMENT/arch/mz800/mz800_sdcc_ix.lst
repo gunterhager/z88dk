@@ -1,3 +1,1 @@
-arch/mz800/c/sdcc_ix/border
-arch/mz800/c/sdcc_ix/border_fastcall
-@arch/mz800/mz800_asm.lst
+@arch/mz800/MZGraphics/MZGraphics_sdcc_ix.lst

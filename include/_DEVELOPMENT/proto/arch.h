@@ -29,6 +29,10 @@ include(__link__.m4)
 #include <../../../libsrc/_DEVELOPMENT/target/z180/config_z180.h>
 #endif
 
+#ifdef __MZ800
+#include <../../../libsrc/_DEVELOPMENT/target/mz800/config_mz800.h>
+#endif
+
 #ifndef __ZXNEXT
 
 #ifdef __SPECTRUM

@@ -1,11 +1,11 @@
-; void border(uint8_t color)
+; void MZGFXBorder(uint8_t color)
 
 SECTION code_clib
 SECTION code_arch
 
-PUBLIC asm_border
+PUBLIC asm_MZGFXBorder
 
-asm_border:
+asm_MZGFXBorder:
 
 ; enter : hl = uint8_t color
 ;
