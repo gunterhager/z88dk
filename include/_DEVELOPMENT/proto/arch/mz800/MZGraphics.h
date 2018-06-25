@@ -12,6 +12,28 @@ include(__link__.m4)
 
 #include <stdint.h>
 
+// Colors
+
+typedef enum MZGFXColor {
+  MZGFXColorBlack,
+  MZGFXColorBlue,
+  MZGFXColorRed,
+  MZGFXColorPurple,
+  MZGFXColorGreen,
+  MZGFXColorCyan,
+  MZGFXColorYellow,
+  MZGFXColorWhite,
+
+  MZGFXColorGray,
+  MZGFXColorLightBlue,
+  MZGFXColorLightRed,
+  MZGFXColorLightPurple,
+  MZGFXColorLightGreen,
+  MZGFXColorLightCyan,
+  MZGFXColorLightYellow,
+  MZGFXColorLightWhite
+};
+
 // FUNCTIONS
 
 __DPROTO(,,void,,MZGFXBorder,uint8_t color)
